@@ -13,5 +13,8 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
+@import "bootstrap-sprockets"; /*Activating bootstrap for the styles*/
 @import "bootstrap";
+
+@import "font-awesome-sprockets"; /*Activating font awesome libary for icons*/
+@import "font-awesome";
