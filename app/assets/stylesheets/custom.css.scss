@@ -24,3 +24,30 @@ i {
   color:#ffffff;
   background:none;
 }
+
+//playing around with forms
+.form-group{
+    color:#ffffff;
+    background:none;
+    border:none;
+    border-bottom:2px solid #ffffff;
+    border-radius:none;
+    box-shadow:none;
+}
+// merge these styles / change core bootstrap styles
+.form-control{
+    background:none;
+    border:none;
+    border-bottom:2px solid #ffffff;
+    border-radius:none;
+    box-shadow:none;
+}
+//btn btn-default
+.btn{
+    background:none;
+    color:#ffffff;
+    border:none;
+    border-bottom:2px solid #ffffff;
+    border-radius:none;
+    box-shadow:none;
+}
