@@ -1,0 +1,26 @@
+@import "bootstrap-sprockets"; /*Activating bootstrap for the styles*/
+@import "bootstrap";
+
+@import "font-awesome-sprockets"; /*Activating font awesome libary for icons*/
+@import "font-awesome";
+
+body {
+    //gradient from http://uigradients.com/# Thank you Indrashish Ghosh
+    background: #F00000; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #F00000 , #DC281E); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #F00000 , #DC281E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+i {
+    color:#ffffff;
+}
+
+// LOOK AT RESET AND BOOTSTRAP SYLES - WHAT IS HELPFUL UI WHAT IS NOT
+.navbar{
+    background:none; // default nav bar has a background color
+    border:none; // navbar has a bottom-border as standard
+}
+
+.jumbotron {
+  color:#ffffff;
+  background:none;
+}
