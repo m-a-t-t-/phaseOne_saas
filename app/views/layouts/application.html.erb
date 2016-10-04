@@ -30,6 +30,9 @@
   </div>
 </nav>
 <div class="container">
+  <% flash.each do |key, value| %> <!--This will check if there is a flash message to call / display -->
+    <%= content_tag :div, value, class: "alert alert-#{key}" %> <!--notice SYNTAX, creates <div>, will VALUE of the function and appends the key to the end of the class. -->
+  <% end %>
   <%= yield %> <!-- Out puts whatever html is on the page currently being requested, THUS, everything will be wrapped by the container class -->
 </div>
 <!--<div class="container">-->
