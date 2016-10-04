@@ -7,6 +7,10 @@ class ContactsController < ApplicationController #function that adds what we wan
         @contact = Contact.new(contact_params) #creating another object filling it with the parameters WHITE LISTED BELOW
         
         if @contact.save # save the contact data to the database / commiting it saves the contact object at the sametime as applying logic
+            name = params[:contact][:name] #create variables that are the same as in view and function calling the view file below - they are called by funciton below as well
+            email = params[:contact][:email] #hash syntax 
+            body = params[:contact][:comments]
+            ContactMailer.contact_email(name, email, body).deliver #run the mailer file and deliver - call it
             flash[:success] = "Message Sent"
             redirect_to new_contact_path # save => true then run this # send user back to blank form page
         else
