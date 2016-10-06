@@ -11,18 +11,17 @@ class ContactsController < ApplicationController #function that adds what we wan
             email = params[:contact][:email] #hash syntax 
             body = params[:contact][:comments]
             ContactMailer.contact_email(name, email, body).deliver #run the mailer file and deliver - call it
-            flash[:success] = "Message Sent"
+            flash[:success] = 'Message Sent.'
             redirect_to new_contact_path # save => true then run this # send user back to blank form page
         else
-            flash[:danger] = "Error occured, message has not been sent."
+            flash[:danger] = 'Error occured, message has not been sent.'
             redirect_to new_contact_path # if false run this
         end
     end
     
     
-    private
-        def contact_params #has to be the same name as code within the ().
-            params.require(:contact).permit(:name, :email, :comments) # White Listing the parameters
-        end
-    
+private
+    def contact_params #has to be the same name as code within the ().
+        params.require(:contact).permit(:name, :email, :comments) # White Listing the parameters
+    end
 end
