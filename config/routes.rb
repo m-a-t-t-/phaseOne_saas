@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :contacts # Provided with routes, URL's, HTTP Verbs
   get'/about' => 'pages#about'
   root 'pages#home'
