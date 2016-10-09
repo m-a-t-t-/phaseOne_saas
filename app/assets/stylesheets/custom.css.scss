@@ -1,8 +1,13 @@
 @import "bootstrap-sprockets"; /*Activating bootstrap for the styles*/
 @import "bootstrap";
-
 @import "font-awesome-sprockets"; /*Activating font awesome libary for icons*/
 @import "font-awesome";
+
+.alert-notice {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+}
 
 // body {
 //     //gradient from http://uigradients.com/# Thank you Indrashish Ghosh
