@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   belongs_to :plan #associates user with plan
+  has_one :profile
   attr_accessor :stripe_card_token #allows us to use hidden field data that we created and access with JS
   
   def save_with_payment
