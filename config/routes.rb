@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
   resources :users do
-    resource :profile
+    resource :profile #nested resource - the profile is directly accosicated with the user, so nested inside. Kept singular as only 1 profile per user
   end
   resources :contacts # Provided with routes, URL's, HTTP Verbs
   get'/about' => 'pages#about'
