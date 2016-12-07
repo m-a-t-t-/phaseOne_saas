@@ -5,6 +5,22 @@ class ProfilesController < ApplicationController
        @user = User.find( params[:user_id] )
        # established nested action, this allows us to use the build_profile
        @profile = @user.build_profile
-       
     end
+    
+    def create
+        # reaching into the database - finding current user and storing it in the instance variable
+       @user = User.find( params[:user_id] )
+       @profile = @user.build_profile(profile_params)
+       if @profile.save
+           flash[:success] = "Profile Updated!"
+           redirect_to user_path( params[:user_id] )
+        else
+        render action: :new
+       end
+    end
+    
+    private
+        def profile_params
+            params.require(:profile).permit(:first_name, :last_name, :job_title, :phone_number, :contact_email, :description)
+        end
 end
