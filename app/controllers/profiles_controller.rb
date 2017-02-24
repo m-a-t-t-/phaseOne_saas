@@ -25,7 +25,9 @@ class ProfilesController < ApplicationController
     end
     
     def update
+        #establish what user we are targeting
         @user = User.find( params[:user_id] )
+        #establish what profile we are updating
         @profile = @user.profile
         if @profile.update_attributes(profile_params)
             flash[:success] = "Profile Updated!"
