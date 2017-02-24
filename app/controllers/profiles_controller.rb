@@ -1,4 +1,8 @@
 class ProfilesController < ApplicationController
+    #before_action is a rails action. function is a devise call allowing us to authenticate users
+    before_action :authenticate_user!
+    before_action :only_current_user
+    
     def new
        # form for user can create unique profile
        # params that accesses specific id is how we only show the user their own profile
@@ -40,5 +44,10 @@ class ProfilesController < ApplicationController
     private
         def profile_params
             params.require(:profile).permit(:first_name, :last_name, :job_title, :phone_number, :contact_email, :description)
+        end
+        
+        def only_current_user
+            @user = User.find( params[:user_id] )
+            redirect_to(root_url) unless @user == current_user
         end
 end
