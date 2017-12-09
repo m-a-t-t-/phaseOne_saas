@@ -1,1 +1,13 @@
-list all of our users here.
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <ul class="list-unstyled">
+            <% @users.each do |user| %> <!-- for each user run everything inside the parenthesis -->
+                <% if user.profile %> <!-- if user has filled profile table, return true and show data show data -->
+                    <li>
+                        <%= user.profile %><br/>
+                    </li>
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+</div>
